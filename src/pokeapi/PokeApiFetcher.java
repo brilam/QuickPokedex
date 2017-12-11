@@ -9,7 +9,8 @@ import java.net.URL;
 
 public class PokeApiFetcher {
   public static final String API_URL = "https://pokeapi.co/api/v2/";
-  public static final String POKEMON_URL = "pokemon/";
+  protected static final String POKEMON_URL = "pokemon/";
+  protected static final String TYPES_URL = "type/";
   private static final int FAILED = -1;
 
   /**
@@ -22,6 +23,22 @@ public class PokeApiFetcher {
     int numPokemon = FAILED;
     // Makes a URL object given the Pokemon url
     URL url = new URL(API_URL + POKEMON_URL);
+    // Gets the response of the GET request
+    String response = getApiResponse(url);
+    numPokemon = PokeApiParser.parseCount(response);
+    return numPokemon;
+  }
+
+  /**
+   * Returns the number of types of Pokemon in the Pokedex by making a GET request to the Types URL
+   * of PokeAPI and parsing the count.
+   * 
+   * @return the number of types of Pokemon
+   */
+  public static int getNumTypes() throws IOException {
+    int numPokemon = FAILED;
+    // Makes a URL object given the Pokemon url
+    URL url = new URL(API_URL + TYPES_URL);
     // Gets the response of the GET request
     String response = getApiResponse(url);
     numPokemon = PokeApiParser.parseCount(response);

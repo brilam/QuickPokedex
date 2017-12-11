@@ -18,6 +18,7 @@ public class Driver {
   public static void main(String[] args) {
     try {
       System.out.println(PokeApiFetcher.getNumPokemon());
+      System.out.println(PokeApiFetcher.getNumTypes());
       /*
        * TODO: Create a Connection and make GET requests to each
        * Pokemon endpoint in the API, and write that information
