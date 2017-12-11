@@ -18,6 +18,8 @@ public class PokeApiFetcher {
    * PokeAPI and parsing the count.
    * 
    * @return the number of Pokemon in the Pokedex
+   * @throws IOException any errors that occurs such as a bad HTTP response, parsing issues with
+   *         JSON, etc.     
    */
   public static int getNumPokemon() throws IOException {
     int numPokemon = FAILED;
@@ -34,6 +36,8 @@ public class PokeApiFetcher {
    * of PokeAPI and parsing the count.
    * 
    * @return the number of types of Pokemon
+   * @throws IOException any errors that occurs such as a bad HTTP response, parsing issues with
+   *         JSON, etc.   
    */
   public static int getNumTypes() throws IOException {
     int numPokemon = FAILED;

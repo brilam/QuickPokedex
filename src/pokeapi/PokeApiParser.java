@@ -39,10 +39,10 @@ public class PokeApiParser {
   }
   
   /**
-   * Given an API response made to the Types URL, parses the types, and returns a List of Pairs
-   * (left side is the ID of the type, and right side is the type name).
+   * Given an API response made to the Types URL, parses the types, and returns a List of HashMap
+   * &lt;type id, type name&gt;.
    * @param response the response from the API made to http://pokeapi.co/api/v2/types
-   * @return a List of Pairs (left side is the ID of the type, and right side is the type name).
+   * @return a List of HashMap where the key is id and the value is the type name
    * @throws IOException errors when parsing
    */
   public static List<Map<Integer, String>> parseTypes(String response) throws IOException {
